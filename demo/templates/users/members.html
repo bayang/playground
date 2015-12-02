@@ -1,0 +1,26 @@
+
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Welcome {{ session.username }}</h1>
+    <h3>This is a members-only page.</h3>
+    <div class="container">
+      <div class="row">
+        <button type="button" name="button" id="ipbutton">Get your IP</button>
+          <div id="ipcontent">
+
+          </div>
+          <hr>
+          <div class="messageform">
+            <form class="messageform" action="." method="post">
+              <label for="message">Send us a message</label><input type="text" name="message" value="" placeholder="Enter your message">
+              <button type="submit" name="submitbutton">Send !</button>
+            </form>
+          {% if message %}
+          <div class="message">
+            Just kidding {{ session.username }} ! Here is your message : {{ message }}.
+          </div>
+          {% endif %}
+          </div>
+      </div>
+    </div>
+{% endblock %}

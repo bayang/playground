@@ -1,0 +1,42 @@
+
+{% extends "layout.html" %}
+{% block content %}
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+
+  <h1>Welcome to demo</h1>
+
+  <p>This is just a sample website including some demo utilities.</p>
+  <p> You can watch maps on this main page, you can register an account and go to a members page (there's a sample account if you don't want to create one, login:joetest and password:testjoe). The members page can be used to display your Ip or send us a message.</p>
+</div><!-- /.jumbotron -->
+
+<div class="body-content">
+<div class="row">
+<div class="col-xs-12">
+<p>
+  Would you like to display a map ? Choose some coordinates in decimal format (e.g. latitude 48,85 and longitude 2,35 for Paris ; and latitude 40,71 longitude -74 for New York), choose aerial view or road map and click the button.
+</p>
+</div>
+</div>
+<div class="row">
+  <div class="col">
+  <select name="maptypes" id="mapselector">
+ <option value="OSM" selected>Street view</option>
+ <option value="bing">Aerial view</option>
+</select>
+<label for="Lon">Longitude :</label><input type=number name="Lon" step=0.01 min=-180 max=180 id="myLon"/>
+<label for="Lat">Latitude :</label><input type="number" name="Lat" min="-180" max="180" step="0.01" id="myLat"/>
+<button type="button" name="button" id="mapbutton">Show me the map !</button>
+  </div>
+
+</div>
+
+  <div class="row-fluid">
+<div class="col-lg-1"></div>
+  <div class="span12 col-xs-12 col-sm-12 col-lg-10">
+    <div id="map" class="map"></div>
+    <div class="col-lg-1"></div>
+  </div>
+</div>
+</div>
+{% endblock %}
